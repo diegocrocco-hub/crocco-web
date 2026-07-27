@@ -25,7 +25,7 @@ section { position: relative; }
 /* ── NAV ── */
 nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 999;
-  height: 52px;
+  height: 76px;
   display: flex; align-items: center; justify-content: center;
   background: rgba(255,255,255,0.85);
   backdrop-filter: saturate(180%) blur(20px);
@@ -37,7 +37,7 @@ nav {
   display: flex; align-items: center; justify-content: space-between;
 }
 .nav-logo { font-size: 15px; font-weight: 600; letter-spacing: -0.01em; }
-.nav-logo-img { height: 26px; width: auto; display: block; }
+.nav-logo-img { height: 52px; width: auto; display: block; }
 .nav-links { display: flex; gap: 28px; }
 .nav-links a { font-size: 12px; color: #1d1d1f; opacity: 0.85; transition: opacity 0.2s; }
 .nav-links a:hover { opacity: 1; }
@@ -51,7 +51,9 @@ nav {
 .hero {
   padding: 150px 22px 90px;
   text-align: center;
-  background: linear-gradient(180deg, #fbfbfd 0%, #ffffff 100%);
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.92) 75%, #ffffff 100%),
+    url('./assets:/bg-hero.jpg') center/cover no-repeat;
 }
 .hero-eyebrow {
   font-size: 14px; font-weight: 600; color: #0071e3; letter-spacing: 0.02em;
@@ -94,7 +96,11 @@ nav {
 }
 
 /* ── TIENDAS ── */
-#comprar { background: #f5f5f7; }
+#comprar {
+  background:
+    linear-gradient(180deg, rgba(245,245,247,0.93) 0%, rgba(245,245,247,0.97) 100%),
+    url('./assets:/bg-comprar.jpg') center/cover no-repeat;
+}
 .stores-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
   gap: 18px; margin-top: 10px;
@@ -111,14 +117,18 @@ nav {
   display: inline-block; font-size: 14px; font-weight: 500; color: #0071e3;
 }
 .store-card.disabled { opacity: 0.55; }
-.store-logo { height: 40px; width: auto; max-width: 170px; margin: 0 auto 16px; object-fit: contain; border-radius: 8px; }
+.store-logo { height: 64px; width: auto; max-width: 220px; margin: 0 auto 16px; object-fit: contain; border-radius: 8px; }
 .store-tag {
   display: inline-block; font-size: 11px; font-weight: 600; color: #6e6e73;
   background: #f0f0f2; padding: 3px 10px; border-radius: 980px; margin-top: 4px;
 }
 
 /* ── NOSOTROS ── */
-#nosotros { background: #fff; }
+#nosotros {
+  background:
+    linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.97) 100%),
+    url('./assets:/bg-nosotros.jpg') center/cover no-repeat;
+}
 .about-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
 }
@@ -136,19 +146,24 @@ nav {
 }
 
 /* ── MARCAS ── */
-#marcas { background: #f5f5f7; }
+#marcas {
+  background:
+    linear-gradient(180deg, rgba(245,245,247,0.93) 0%, rgba(245,245,247,0.97) 100%),
+    url('./assets:/bg-marcas.jpg') center/cover no-repeat;
+}
 .marcas-grid {
   display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 16px;
 }
 .marca-card {
-  background: #fff; border-radius: 16px; padding: 26px 16px; text-align: center;
+  background: #fff; border-radius: 16px; padding: 34px 18px; text-align: center;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  min-height: 170px; display: flex; flex-direction: column; align-items: center; justify-content: center;
 }
 .marca-card:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(0,0,0,0.08); }
-.marca-logo { height: 56px; width: auto; max-width: 100%; margin: 0 auto 12px; object-fit: contain; }
-.marca-card.no-logo { display: flex; align-items: center; justify-content: center; min-height: 128px; }
+.marca-logo { height: 84px; width: auto; max-width: 100%; margin: 0 auto 14px; object-fit: contain; }
+.marca-card.no-logo { display: flex; align-items: center; justify-content: center; }
 .marca-name { font-size: 1.05rem; font-weight: 600; letter-spacing: 0.01em; }
 .marca-note { font-size: 0.78rem; color: #6e6e73; margin-top: 6px; }
 
@@ -208,8 +223,7 @@ footer { background: #f5f5f7; border-top: 1px solid #e5e5e7; }
       <a href="#comprar">Comprar</a>
       <a href="#nosotros">Nosotros</a>
       <a href="#marcas">Marcas</a>
-      <a href="#mayoreo">Mayoreo</a>
-      <a href="#contacto">Contacto</a>
+      <a href="#contacto">Mayoreo y Contacto</a>
     </div>
     <a href="#comprar" class="nav-links nav-cta">Comprar ahora</a>
   </div>
@@ -320,24 +334,14 @@ footer { background: #f5f5f7; border-top: 1px solid #e5e5e7; }
   </div>
 </section>
 
-<!-- MAYOREO -->
-<section id="mayoreo" style="background:#f5f5f7;">
-  <div class="section-inner">
-    <h2 class="section-title reveal">¿Compras para tu negocio?</h2>
-    <p class="section-sub reveal">Si tienes una tienda, un negocio en línea o simplemente necesitas volumen, tenemos precios y condiciones especiales de mayoreo en todo el catálogo.</p>
-    <div class="mvv-card reveal" style="max-width:640px; margin:0 auto; text-align:center;">
-      <h3 style="margin-bottom:10px;">Precios de mayoreo</h3>
-      <p style="margin-bottom:20px;">Cuéntanos qué productos te interesan y en qué volumen, y te enviamos una cotización.</p>
-      <a href="#contacto" class="btn-primary" style="text-decoration:none;">Solicitar cotización de mayoreo</a>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACTO / DISTRIBUIDORES -->
-<section id="contacto">
+<!-- CONTACTO / MAYOREO Y DISTRIBUIDORES -->
+<section id="contacto"
+  style="background:
+    linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.97) 100%),
+    url('./assets:/bg-contacto.jpg') center/cover no-repeat;">
   <div class="section-inner">
     <h2 class="section-title reveal">Hablemos</h2>
-    <p class="section-sub reveal">Ya sea que tengas una marca buscando distribución o quieras comprar por mayoreo, cuéntanos y te contactamos.</p>
+    <p class="section-sub reveal">Ya sea que tengas una marca buscando distribución, o necesites precios de mayoreo para tu negocio, cuéntanos y te contactamos.</p>
     <div class="contact-wrap reveal">
       <form id="brandForm" onsubmit="sendForm(event)">
         <div class="form-row">
