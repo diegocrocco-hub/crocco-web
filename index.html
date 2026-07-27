@@ -103,13 +103,15 @@ nav {
     url('./assets:/bg-comprar.jpg') center/cover no-repeat;
 }
 .stores-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
-  gap: 18px; margin-top: 10px;
+  display: flex; flex-wrap: wrap; justify-content: center;
+  gap: 20px; margin-top: 10px;
 }
 .store-card {
-  background: #fff; border-radius: 18px; padding: 32px 24px;
+  background: #fff; border-radius: 18px; padding: 36px 24px;
   text-align: center; transition: transform 0.25s ease, box-shadow 0.25s ease;
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  flex: 1 1 220px; max-width: 240px;
+  display: flex; flex-direction: column; align-items: center; justify-content: flex-start;
 }
 .store-card:not(.disabled):hover { transform: translateY(-4px); box-shadow: 0 12px 28px rgba(0,0,0,0.1); }
 .store-name { font-size: 1.2rem; font-weight: 600; margin-bottom: 6px; }
@@ -118,7 +120,7 @@ nav {
   display: inline-block; font-size: 14px; font-weight: 500; color: #0071e3;
 }
 .store-card.disabled { opacity: 0.55; }
-.store-logo { height: 64px; width: auto; max-width: 220px; margin: 0 auto 16px; object-fit: contain; border-radius: 8px; }
+.store-logo { height: 96px; width: auto; max-width: 100%; margin: 0 auto 20px; object-fit: contain; border-radius: 8px; }
 .store-tag {
   display: inline-block; font-size: 11px; font-weight: 600; color: #6e6e73;
   background: #f0f0f2; padding: 3px 10px; border-radius: 980px; margin-top: 4px;
@@ -152,21 +154,24 @@ nav {
     linear-gradient(180deg, rgba(245,245,247,0.93) 0%, rgba(245,245,247,0.97) 100%),
     url('./assets:/bg-marcas.jpg') center/cover no-repeat;
 }
-.marcas-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  gap: 16px;
+#marcas .section-inner { padding-bottom: 20px; }
+.marcas-carousel {
+  overflow: hidden; padding: 10px 0 100px;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
 }
-.marca-card {
-  background: #fff; border-radius: 16px; padding: 34px 18px; text-align: center;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-  min-height: 170px; display: flex; flex-direction: column; align-items: center; justify-content: center;
+.marcas-track {
+  display: flex; align-items: center; gap: 56px; width: max-content;
+  animation: marcas-scroll 30s linear infinite;
 }
-.marca-card:hover { transform: translateY(-3px); box-shadow: 0 10px 22px rgba(0,0,0,0.08); }
-.marca-logo { height: 90px; width: auto; max-width: 100%; margin: 0 auto; object-fit: contain; }
-.marca-card.no-logo { display: flex; align-items: center; justify-content: center; }
-.marca-name { font-size: 1.05rem; font-weight: 600; letter-spacing: 0.01em; }
-.marca-note { font-size: 0.78rem; color: #6e6e73; margin-top: 6px; }
+.marcas-carousel:hover .marcas-track { animation-play-state: paused; }
+@keyframes marcas-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+.marca-item { flex: 0 0 auto; display: flex; align-items: center; justify-content: center; height: 110px; }
+.marca-logo { height: 90px; width: auto; max-width: 180px; object-fit: contain; }
+.marca-name { font-size: 1.4rem; font-weight: 600; letter-spacing: 0.01em; color: #6e6e73; white-space: nowrap; }
 
 /* ── DISTRIBUIDORES / CONTACTO ── */
 #contacto { background: #fff; }
@@ -325,17 +330,30 @@ footer { background: #f5f5f7; border-top: 1px solid #e5e5e7; }
   <div class="section-inner">
     <h2 class="section-title reveal">Marcas que distribuimos</h2>
     <p class="section-sub reveal">Un portafolio en crecimiento, seleccionado con el mismo estándar de calidad.</p>
-    <div class="marcas-grid reveal">
-      <div class="marca-card"><img class="marca-logo" src="./assets:/evolum.png" alt="EVOLUM"></div>
-      <div class="marca-card"><img class="marca-logo" src="./assets:/illume.png" alt="ILLUME"></div>
-      <div class="marca-card"><img class="marca-logo" src="./assets:/aozoom.png" alt="AOZOOM"></div>
-      <div class="marca-card"><img class="marca-logo" src="./assets:/coquo.png" alt="COQUO"></div>
-      <div class="marca-card"><img class="marca-logo" src="./assets:/amababy.png" alt="AMABABY"></div>
-      <div class="marca-card"><img class="marca-logo" src="./assets:/sovico.png" alt="SOVICO"></div>
-      <div class="marca-card"><img class="marca-logo" src="./assets:/jawahra.png" alt="JAWAHRA"></div>
-      <div class="marca-card"><img class="marca-logo" src="./assets:/premier-nuts.png" alt="PREMIER NUTS"></div>
-      <div class="marca-card no-logo"><div class="marca-name">VITTETI</div></div>
-      <div class="marca-card"><img class="marca-logo" src="./assets:/kongo.png" alt="KONG"></div>
+  </div>
+  <div class="marcas-carousel reveal">
+    <div class="marcas-track">
+      <div class="marca-item"><img class="marca-logo" src="./assets:/evolum.png" alt="EVOLUM"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets:/illume.png" alt="ILLUME"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets:/aozoom.png" alt="AOZOOM"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets:/coquo.png" alt="COQUO"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets:/amababy.png" alt="AMABABY"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets:/sovico.png" alt="SOVICO"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets:/jawahra.png" alt="JAWAHRA"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets:/premier-nuts.png" alt="PREMIER NUTS"></div>
+      <div class="marca-item"><div class="marca-name">VITTETI</div></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets:/kongo.png" alt="KONG"></div>
+      <!-- Duplicado para el loop continuo -->
+      <div class="marca-item"><img class="marca-logo" src="./assets:/evolum.png" alt="EVOLUM"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets:/illume.png" alt="ILLUME"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets:/aozoom.png" alt="AOZOOM"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets:/coquo.png" alt="COQUO"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets:/amababy.png" alt="AMABABY"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets:/sovico.png" alt="SOVICO"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets:/jawahra.png" alt="JAWAHRA"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets:/premier-nuts.png" alt="PREMIER NUTS"></div>
+      <div class="marca-item"><div class="marca-name">VITTETI</div></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets:/kongo.png" alt="KONG"></div>
     </div>
   </div>
 </section>
