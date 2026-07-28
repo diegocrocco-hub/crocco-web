@@ -5,9 +5,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="Crocco Brands — Distribuidora oficial de marcas premium en México. Focos LED, audio, iluminación y más.">
 <title>Crocco Brands</title>
-<link rel="icon" type="image/png" href="./assets:/favicon.png">
+<link rel="icon" type="image/png" href="./assets/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
 <style>
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 html { scroll-behavior: smooth; font-size: 16px; }
@@ -60,7 +61,7 @@ nav {
   text-align: center;
   background:
     linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(255,255,255,0.92) 75%, #ffffff 100%),
-    url('./assets:/bg-hero.jpg') center/cover no-repeat;
+    url('./assets/bg-hero.jpg') center/cover no-repeat;
 }
 .hero-eyebrow {
   font-size: 14px; font-weight: 600; color: #0071e3; letter-spacing: 0.02em;
@@ -106,7 +107,7 @@ nav {
 #comprar {
   background:
     linear-gradient(180deg, rgba(245,245,247,0.93) 0%, rgba(245,245,247,0.97) 100%),
-    url('./assets:/bg-comprar.jpg') center/cover no-repeat;
+    url('./assets/bg-comprar.jpg') center/cover no-repeat;
 }
 .stores-grid {
   display: flex; flex-wrap: wrap; justify-content: center;
@@ -136,7 +137,7 @@ nav {
 #nosotros {
   background:
     linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.97) 100%),
-    url('./assets:/bg-nosotros.jpg') center/cover no-repeat;
+    url('./assets/bg-nosotros.jpg') center/cover no-repeat;
 }
 .about-grid {
   display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start;
@@ -158,7 +159,7 @@ nav {
 #marcas {
   background:
     linear-gradient(180deg, rgba(245,245,247,0.93) 0%, rgba(245,245,247,0.97) 100%),
-    url('./assets:/bg-marcas.jpg') center/cover no-repeat;
+    url('./assets/bg-marcas.jpg') center/cover no-repeat;
 }
 #marcas .section-inner { padding-bottom: 20px; }
 .marcas-carousel {
@@ -240,7 +241,7 @@ footer { background: #f5f5f7; border-top: 1px solid #e5e5e7; }
 <!-- NAV -->
 <nav>
   <div class="nav-inner">
-    <img src="./assets:/crocco-brands.png" alt="Crocco Brands" class="nav-logo-img">
+    <img src="./assets/crocco-brands.png" alt="Crocco Brands" class="nav-logo-img">
     <div class="nav-links">
       <a href="#comprar">Comprar</a>
       <a href="#nosotros">Nosotros</a>
@@ -270,27 +271,27 @@ footer { background: #f5f5f7; border-top: 1px solid #e5e5e7; }
     <p class="section-sub reveal">Elige tu tienda favorita. Los mismos productos, la misma garantía Crocco Brands.</p>
     <div class="stores-grid reveal">
       <div class="store-card">
-        <img class="store-logo" src="./assets:/mercadolibre.png" alt="Mercado Libre">
+        <img class="store-logo" src="./assets/mercadolibre.png" alt="Mercado Libre">
         <div class="store-desc">Tienda oficial con envío a todo México</div>
         <a class="store-link" href="https://www.mercadolibre.com.mx/tienda/crocco-brands" target="_blank" rel="noopener">Visitar tienda →</a>
       </div>
       <div class="store-card">
-        <img class="store-logo" src="./assets:/amazon.png" alt="Amazon">
+        <img class="store-logo" src="./assets/amazon.png" alt="Amazon">
         <div class="store-desc">Catálogo completo y compra rápida</div>
         <a class="store-link" href="https://www.amazon.com.mx/s?me=A3DVEE3AR4NEUY&marketplaceID=A1AM78C64UM0Y8" target="_blank" rel="noopener">Visitar tienda →</a>
       </div>
       <div class="store-card">
-        <img class="store-logo" src="./assets:/liverpool.png" alt="Liverpool">
+        <img class="store-logo" src="./assets/liverpool.png" alt="Liverpool">
         <div class="store-desc">Selección disponible en línea</div>
         <a class="store-link" href="https://www.liverpool.com.mx/tienda/sp/crocco-brands/4561?st=Relevancia|0" target="_blank" rel="noopener">Visitar tienda →</a>
       </div>
       <div class="store-card">
-        <img class="store-logo" src="./assets:/walmart.png" alt="Walmart Marketplace">
+        <img class="store-logo" src="./assets/walmart.png" alt="Walmart Marketplace">
         <div class="store-desc">Producto por producto, aún sin tienda unificada</div>
         <a class="store-link" href="https://www.walmart.com.mx/" target="_blank" rel="noopener">Buscar en Walmart →</a>
       </div>
       <div class="store-card">
-        <img class="store-logo" src="./assets:/tiktokshop.png" alt="TikTok Shop">
+        <img class="store-logo" src="./assets/tiktokshop.png" alt="TikTok Shop">
         <div class="store-desc">Ya puedes comprar ahí, aún sin tienda unificada</div>
         <a class="store-link" href="https://www.tiktok.com/discover/tiktok-shop-mexico" target="_blank" rel="noopener">Ver en TikTok Shop →</a>
       </div>
@@ -340,27 +341,27 @@ footer { background: #f5f5f7; border-top: 1px solid #e5e5e7; }
   </div>
   <div class="marcas-carousel reveal">
     <div class="marcas-track">
-      <div class="marca-item"><img class="marca-logo" src="./assets:/evolum.png" alt="EVOLUM"></div>
-      <div class="marca-item"><img class="marca-logo" src="./assets:/illume.png" alt="ILLUME"></div>
-      <div class="marca-item"><img class="marca-logo" src="./assets:/aozoom.png" alt="AOZOOM"></div>
-      <div class="marca-item"><img class="marca-logo" src="./assets:/coquo.png" alt="COQUO"></div>
-      <div class="marca-item"><img class="marca-logo" src="./assets:/amababy.png" alt="AMABABY"></div>
-      <div class="marca-item"><img class="marca-logo" src="./assets:/sovico.png" alt="SOVICO"></div>
-      <div class="marca-item"><img class="marca-logo" src="./assets:/jawahra.png" alt="JAWAHRA"></div>
-      <div class="marca-item"><img class="marca-logo" src="./assets:/premier-nuts.png" alt="PREMIER NUTS"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/evolum.png" alt="EVOLUM"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/illume.png" alt="ILLUME"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/aozoom.png" alt="AOZOOM"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/coquo.png" alt="COQUO"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/amababy.png" alt="AMABABY"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/sovico.png" alt="SOVICO"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/jawahra.png" alt="JAWAHRA"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/premier-nuts.png" alt="PREMIER NUTS"></div>
       <div class="marca-item"><div class="marca-name">VITTETI</div></div>
-      <div class="marca-item"><img class="marca-logo" src="./assets:/kongo.png" alt="KONG"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/kongo.png" alt="KONG"></div>
       <!-- Duplicado para el loop continuo -->
-      <div class="marca-item"><img class="marca-logo" src="./assets:/evolum.png" alt="EVOLUM"></div>
-      <div class="marca-item"><img class="marca-logo" src="./assets:/illume.png" alt="ILLUME"></div>
-      <div class="marca-item"><img class="marca-logo" src="./assets:/aozoom.png" alt="AOZOOM"></div>
-      <div class="marca-item"><img class="marca-logo" src="./assets:/coquo.png" alt="COQUO"></div>
-      <div class="marca-item"><img class="marca-logo" src="./assets:/amababy.png" alt="AMABABY"></div>
-      <div class="marca-item"><img class="marca-logo" src="./assets:/sovico.png" alt="SOVICO"></div>
-      <div class="marca-item"><img class="marca-logo" src="./assets:/jawahra.png" alt="JAWAHRA"></div>
-      <div class="marca-item"><img class="marca-logo" src="./assets:/premier-nuts.png" alt="PREMIER NUTS"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/evolum.png" alt="EVOLUM"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/illume.png" alt="ILLUME"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/aozoom.png" alt="AOZOOM"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/coquo.png" alt="COQUO"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/amababy.png" alt="AMABABY"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/sovico.png" alt="SOVICO"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/jawahra.png" alt="JAWAHRA"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/premier-nuts.png" alt="PREMIER NUTS"></div>
       <div class="marca-item"><div class="marca-name">VITTETI</div></div>
-      <div class="marca-item"><img class="marca-logo" src="./assets:/kongo.png" alt="KONG"></div>
+      <div class="marca-item"><img class="marca-logo" src="./assets/kongo.png" alt="KONG"></div>
     </div>
   </div>
 </section>
@@ -369,15 +370,14 @@ footer { background: #f5f5f7; border-top: 1px solid #e5e5e7; }
 <section id="contacto"
   style="background:
     linear-gradient(180deg, rgba(255,255,255,0.94) 0%, rgba(255,255,255,0.97) 100%),
-    url('./assets:/bg-contacto.jpg') center/cover no-repeat;">
+    url('./assets/bg-contacto.jpg') center/cover no-repeat;">
   <div class="section-inner">
     <h2 class="section-title reveal">Hablemos</h2>
     <p class="section-sub reveal">Ya sea que tengas una marca buscando distribución, o necesites precios de mayoreo para tu negocio, cuéntanos y te contactamos.</p>
     <div class="contact-wrap reveal">
-      <form id="brandForm" name="contacto-crocco" method="POST" data-netlify="true" netlify-honeypot="empresa-web" onsubmit="sendForm(event)">
-        <input type="hidden" name="form-name" value="contacto-crocco">
+      <form id="brandForm" onsubmit="sendForm(event)">
         <p style="position:absolute; left:-9999px;">
-          <label>No llenes esto si eres humano: <input name="empresa-web" tabindex="-1" autocomplete="off"></label>
+          <label>No llenes esto si eres humano: <input name="empresa-web" id="fHoneypot" tabindex="-1" autocomplete="off"></label>
         </p>
         <div class="form-row">
           <label for="fMotivo">Motivo de tu mensaje</label>
@@ -418,7 +418,7 @@ footer { background: #f5f5f7; border-top: 1px solid #e5e5e7; }
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <img src="./assets:/crocco-brands.png" alt="Crocco Brands" class="footer-logo-img">
+    <img src="./assets/crocco-brands.png" alt="Crocco Brands" class="footer-logo-img">
     <span class="footer-copy">Copyright © 2026 Crocco Brands. Todos los derechos reservados.</span>
     <ul class="footer-nav">
       <li><a href="#comprar">Comprar</a></li>
@@ -437,26 +437,41 @@ const obs = new IntersectionObserver(es => {
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
 
 // FORM
-function sendForm(e) {
+const SUPABASE_URL = 'https://jpscjdumeuabnmwrsvki.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Impwc2NqZHVtZXVhYm5td3JzdmtpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQzODY3OTcsImV4cCI6MjA4OTk2Mjc5N30.TNv1twrLXX-GNBvFzwOLq9F6wmZo0X0KQhkyoC74VJg';
+const sbContact = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+async function sendForm(e) {
   e.preventDefault();
   const form = document.getElementById('brandForm');
   const btn = document.querySelector('.form-btn');
+
+  // Honeypot anti-spam: si un bot llenó este campo oculto, fingimos éxito y no guardamos nada
+  if (document.getElementById('fHoneypot').value) {
+    form.style.display = 'none';
+    document.getElementById('fSuccess').style.display = 'block';
+    return;
+  }
+
   btn.disabled = true; btn.textContent = 'Enviando...';
 
-  const data = new FormData(form);
-  fetch('/', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-    body: new URLSearchParams(data).toString()
-  })
-    .then(() => {
-      form.style.display = 'none';
-      document.getElementById('fSuccess').style.display = 'block';
-    })
-    .catch(() => {
-      btn.disabled = false; btn.textContent = 'Enviar';
-      alert('Hubo un problema al enviar tu mensaje. Por favor intenta de nuevo o escríbenos directo por correo o WhatsApp.');
-    });
+  const payload = {
+    motivo: document.getElementById('fMotivo').value,
+    nombre: document.getElementById('fName').value,
+    marca: document.getElementById('fBrand').value,
+    email: document.getElementById('fEmail').value,
+    mensaje: document.getElementById('fMsg').value
+  };
+
+  const { error } = await sbContact.from('contactos_web').insert(payload);
+
+  if (!error) {
+    form.style.display = 'none';
+    document.getElementById('fSuccess').style.display = 'block';
+  } else {
+    btn.disabled = false; btn.textContent = 'Enviar';
+    alert('Hubo un problema al enviar tu mensaje. Por favor intenta de nuevo o escríbenos directo por correo o WhatsApp.');
+  }
 }
 
 // NAV scroll shadow
